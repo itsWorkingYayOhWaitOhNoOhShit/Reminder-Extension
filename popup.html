@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reminder Extension</title>
+    <style>
+      body {
+        font-family: Cambria;
+        width: 320px;
+        padding: 15px;
+        background: linear-gradient(90deg, #6a9cd6, #90bdf7);
+        text-align: center;
+        border-radius: 50px;        
+        box-shadow: inset 0px 0px 35px rgb(255, 255, 255, 0.9);
+        color: rgb(27, 27, 27);        
+      }
+      #countdown,
+      #countdown2 {
+        margin-top: 5px;
+        font-size: 30px;
+      }
+      input[type="text"],
+      input[type="number"] {
+        width: 95%;
+        font-size: 16px;
+        padding: 8px;
+        margin-top: 5px;
+        text-align: center;
+        border-radius: 8px;
+        border: none;
+        box-shadow: inset 0px 3px 5px rgba(53, 161, 255, 0.3);
+        transition: box-shadow 0.3s ease, transform 0.2s ease;
+      }
+      input[type="text"]:focus,
+      input[type="number"]:focus {
+        transform: scale(1.03);
+        outline: none;
+      }
+      h2 {
+        margin-bottom: 10px;
+      }
+      button {
+        width: 49%;
+        font-size: 13px;
+        font-weight: bold;
+        padding: 10px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+        cursor: pointer;
+        background-color: #394f96;
+        border-radius: 8px;
+        border: none;
+        color: white;
+        transition: background-color 0.4s ease, scale 0.4s ease;
+      }
+      button:hover {
+        background-color: #505db0;
+        scale: 1.05;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Custom Reminder Message -->
+    <h2>Reminder Message:</h2>
+    <input type="text" id="message" placeholder="Enter your message" />
+    <button id="save" style="width: 100%">Save Message</button>
+
+    <!-- Interval for Reminder1 -->
+    <h2>Interval:</h2>
+    <div>
+      <input
+        type="number"
+        id="interval"
+        placeholder="Enter interval in minutes"
+      />
+    </div>
+    <div>
+      <button id="saveInterval">Set Custom Interval</button>
+
+      <!-- Default Interval Setting -->
+      <button id="setDefaultInterval">Set Default Interval</button>
+    </div>
+    <!-- Countdown to next 10-minute interval -->
+    <h2>Next Interval in</h2>
+    <div id="countdown">Calculating...</div>
+
+    <!-- Countdown to next alarm -->
+    <h2>Next Alarm in</h2>
+    <div id="countdown2">Calculating...</div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
